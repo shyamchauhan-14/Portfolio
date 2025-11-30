@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0d0d0d;
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #111;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Centered Menu */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-links li {
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: #00eaff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* MOBILE MENU BUTTON */
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8)),
+                        url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200") 
+                        center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+        }
+
+        .hero h1 span {
+            color: #00eaff;
+        }
+
+        .hero p {
+            margin: 15px 0;
+            font-size: 20px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background: #00eaff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .btn.small {
+            padding: 8px 15px;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        /* SKILLS */
+        .skill-box {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .skill {
+            background: #222;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        /* PROJECTS */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        /* CONTACT */
+        form input,
+        form textarea {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        form textarea {
+            height: 120px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+        }
+
+        /* RESPONSIVE MOBILE FIX */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: static;
+                transform: none;
+                display: none;
+                flex-direction: column;
+                background: #111;
+                width: 100%;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">MyPortfolio</div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="menu-btn" id="menuBtn">&#9776;</div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hello, I'm <span>Shyam Chauhan</span></h1>
+            <p>Web Developer  •  UI/UX Designer  •  Creator</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about section">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate web developer skilled in creating modern, clean and functional websites.
+        </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills section">
+        <h2>Skills</h2>
+        <div class="skill-box">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <!-- <div class="skill">JavaScript</div> -->
+            <div class="skill">Python</div>
+            <div class="skill">C Language</div>
+            <div class="skill">PHP</div>
+            <div class="skill">Git & GitHub</div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects section">
+        <h2>Projects</h2>
+        <div class="project-grid">
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1581276879432-15a9af534550?w=600">
+                <h3>Project One</h3>
+                <p>A cool project description goes here.</p>
+                <a href="#" class="btn small">View</a>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?w=600">
+                <h3>Project Two</h3>
+                <p>Another cool project description goes here.</p>
+                <a href="#" class="btn small">View</a>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?w=600">
+                <h3>Project Three</h3>
+                <p>Another cool project description goes here.</p>
+                <a href="#" class="btn small">View</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact section">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Your Name | All Rights Reserved</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", () => {
+            navLinks.style.display =
+                navLinks.style.display === "flex" ? "none" : "flex";
+        });
+    </script>
+
+</body>
+</html>
