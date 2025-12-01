@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -71,9 +72,8 @@
         /* HERO */
         .hero {
             height: 100vh;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8)),
-                        url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200") 
-                        center/cover no-repeat;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+                url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200") center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -148,20 +148,6 @@
             border-radius: 5px;
         }
 
-        /* CONTACT */
-        form input,
-        form textarea {
-            width: 90%;
-            padding: 12px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-        }
-
-        form textarea {
-            height: 120px;
-        }
-
         footer {
             text-align: center;
             padding: 20px;
@@ -185,8 +171,64 @@
                 display: block;
             }
         }
+
+        .contact-form {
+            background: #828080;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        .contact-form h2 {
+            margin-bottom: 15px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 15px;
+            border: 3px solid #aad3d7;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background: #00eaff;
+            color: #fff;
+            transition-duration: 0.5s;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background: #02f9d4;
+            transition-duration: 0.5s;
+            border: 3px solid rgb(255, 255, 255);
+            border-radius: 5px;
+        }
     </style>
 </head>
+
 <body>
 
     <!-- NAVBAR -->
@@ -210,7 +252,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Hello, I'm <span>Shyam Chauhan</span></h1>
-            <p>Web Developer  •  UI/UX Designer  •  Creator</p>
+            <p>Web Developer • UI/UX Designer • Creator</p>
             <a href="#projects" class="btn">View My Work</a>
         </div>
     </section>
@@ -243,7 +285,8 @@
         <div class="project-grid">
 
             <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1581276879432-15a9af534550?w=600">
+                <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?w=600" alt="My Image">
+
                 <h3>Project One</h3>
                 <p>A cool project description goes here.</p>
                 <a href="#" class="btn small">View</a>
@@ -265,17 +308,29 @@
 
         </div>
     </section>
-
-    <!-- CONTACT -->
     <section id="contact" class="contact section">
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
+        <center>
+            <form class="contact-form" action="mailto:your_email@example.com" method="post" enctype="text/plain">
+                <h2>Contact Us</h2>
+
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+                <button type="submit">
+                    <font color="black">Send Message</font>
+                </button>
+            </form>
+        </center>
     </section>
+
+
+
 
     <!-- FOOTER -->
     <footer>
@@ -294,4 +349,5 @@
     </script>
 
 </body>
+
 </html>
